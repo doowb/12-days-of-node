@@ -1,0 +1,28 @@
+{
+  "name": "12-days-of-node",
+  "description": "Source code for the Node.js web application built in the 12 days of node blog series.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/doowb/12-days-of-node",
+  "author": "Brian Woodward (https://doowb.com)",
+  "repository": "doowb/12-days-of-node",
+  "bugs": {
+    "url": "https://github.com/doowb/12-days-of-node/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "12",
+    "days",
+    "node",
+    "of"
+  ]
+}
