@@ -26,7 +26,9 @@
     "of"
   ],
   "dependencies": {
+    "body-parser": "^1.18.3",
     "consolidate": "^0.15.1",
+    "data-store": "^3.1.0",
     "express": "^4.16.4",
     "handlebars": "^4.0.12"
   }

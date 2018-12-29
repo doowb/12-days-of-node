@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const consolidate = require('consolidate');
 
 const routes = require('./src/routes');
@@ -25,11 +26,17 @@ async function create() {
   app.set('views', './src/views');
   app.set('view engine', 'hbs');
 
+  app.use(bodyParser.raw());
+  app.use(bodyParser.json());
+  app.use(bodyParser.text());
+  app.use(bodyParser.urlencoded());
+
   /**
    * Register the main application routes at the "root" of the express app.
    */
 
   app.use('/', await routes.app(app));
+  app.use('/api', await routes.api(app));
 
   return app;
 };
