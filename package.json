@@ -26,6 +26,8 @@
     "of"
   ],
   "dependencies": {
-    "express": "^4.16.4"
+    "consolidate": "^0.15.1",
+    "express": "^4.16.4",
+    "handlebars": "^4.0.12"
   }
 }

@@ -1,6 +1,9 @@
 'use strict';
 
 const express = require('express');
+const consolidate = require('consolidate');
+
+const routes = require('./src/routes');
 
 /**
  * Factory function for creating a new application instance.
@@ -13,9 +16,20 @@ const express = require('express');
 async function create() {
   let app = express();
 
-  app.use((req, res) => {
-    res.send('hello world');
-  });
+  /**
+   * Configure the view engine for rendering Handlebars templates with
+   * an extension of `.hbs` in the `src/views` folder.
+   */
+
+  app.engine('hbs', consolidate.handlebars);
+  app.set('views', './src/views');
+  app.set('view engine', 'hbs');
+
+  /**
+   * Register the main application routes at the "root" of the express app.
+   */
+
+  app.use('/', await routes.app(app));
 
   return app;
 };
